@@ -32,15 +32,19 @@ public class MyMain {
     //for loop that goes thorugh string one by one?
     public static String removeNumbers(String str) {
         String empt = "";
-        int zero = str.indexOf('0');
-        if (zero != -1) {
+        for (int i = 0; i < str.length(); i++){
+            char y = str.charAt(i);
+            if (y < '0' || y > '9') {
+                empt = empt + y;
+            }
         }
-        return "";
+        return empt;
     }
 
     // Write some code to test your methods!
     public static void main(String[] args) {
         System.out.println(toLower('j'));
         System.out.println(toUpper('P'));
+        System.out.println(removeNumbers("he11ll0o wo%$r8l*3d"));
     }
 }
